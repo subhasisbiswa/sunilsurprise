@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Surprise</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #ffccff;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3em;
+            color: #ff1493;
+            margin-top: 50px;
+        }
+        div{
+            
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        img{
+            height:400px;
+            width:300px;
+        }
+        .balloon {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background-color: red;
+            border-radius: 50%;
+            animation: float 5s linear infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 Happy Birthday! 🎂</h1>
+    <h1>the pimple boy</h1><h1>sunil</h1>
+    <div>
+        <img src="sunil.jpg" >
+        <img src="sunil3.jpg" >
+        <img src="sunil2.jpg" >
+    </div>
+    <script>
+        function createBalloon() {
+            const balloon = document.createElement("div");
+            balloon.classList.add("balloon");
+            document.body.appendChild(balloon);
+            
+            let colors = ["red", "blue", "green", "yellow", "purple", "orange"];
+            balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.left = Math.random() * 100 + "vw";
+            
+            setTimeout(() => { balloon.remove(); }, 5000);
+        }
+        setInterval(createBalloon, 500);
+    </script>
+</body>
+</html>
